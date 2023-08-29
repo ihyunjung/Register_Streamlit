@@ -1,49 +1,49 @@
-#가져오기
-import streamlit as st
-#사이드 바와 선택 박스
-# page = st.sidebar.selectbox(‘Choose your page’, [‘INPUT FORM’, ‘RESULT’])
-#정보 입력 후 함수
-def update_page():
-  st.balloons()
-  st.markdown('# Thank you for information')
-  st.json(customer_information)
-#혹시 선택 박스에서선택한 페이지가INPUT FORM이라면
-# if page == ‘INPUT FORM’:
-  st.title('INPUT FORMATION')
-#각종 입력 폼
-with st.form(key='customer'):
-  customer_name: str = st.text_input('NAME', max_chars=15)
-  customer_mobile: str = st.text_input('MOBILE', max_chars=13)
-  # customer_gender = st.radio(“GENDER”,(‘MEN’, ‘Women’))
-  # customer_address = st.selectbox(‘COUNTRY’,
-  # (‘Hokkaido’, ‘Tohoku’, ‘Kanto’, ‘Chubu’, ‘Kinki’, ‘Kansai’, ‘Chugoku’, ‘Shikoku’, ‘Kyusyu’, ‘Okinawa’))
-  customer_company: str = st.text_input('Company', max_chars = 20)
-  customer_mail: str = st.text_input('Mail Address', max_chars = 30)
-  #폼에 입력 결과를 정리
-  customer_information = {
-  'customer_name': customer_name,
-  'customer_mobile' : customer_mobile,
-  'customer_company': customer_company,
-  'customer_mail': customer_mail
-  }
-#폼에 입력 결과를 송신
-submit_button = st.form_submit_button(label='Send')
-#submit_button가 송신 되면 함수를 실행
-if submit_button:
-  update_page()
+# #가져오기
+# import streamlit as st
+# #사이드 바와 선택 박스
+# # page = st.sidebar.selectbox(‘Choose your page’, [‘INPUT FORM’, ‘RESULT’])
+# #정보 입력 후 함수
+# def update_page():
+#   st.balloons()
+#   st.markdown('# Thank you for information')
+#   st.json(customer_information)
+# #혹시 선택 박스에서선택한 페이지가INPUT FORM이라면
+# # if page == ‘INPUT FORM’:
+#   st.title('INPUT FORMATION')
+# #각종 입력 폼
+# with st.form(key='customer'):
+#   customer_name: str = st.text_input('NAME', max_chars=15)
+#   customer_mobile: str = st.text_input('MOBILE', max_chars=13)
+#   # customer_gender = st.radio(“GENDER”,(‘MEN’, ‘Women’))
+#   # customer_address = st.selectbox(‘COUNTRY’,
+#   # (‘Hokkaido’, ‘Tohoku’, ‘Kanto’, ‘Chubu’, ‘Kinki’, ‘Kansai’, ‘Chugoku’, ‘Shikoku’, ‘Kyusyu’, ‘Okinawa’))
+#   customer_company: str = st.text_input('Company', max_chars = 20)
+#   customer_mail: str = st.text_input('Mail Address', max_chars = 30)
+#   #폼에 입력 결과를 정리
+#   customer_information = {
+#   'customer_name': customer_name,
+#   'customer_mobile' : customer_mobile,
+#   'customer_company': customer_company,
+#   'customer_mail': customer_mail
+#   }
+# #폼에 입력 결과를 송신
+# submit_button = st.form_submit_button(label='Send')
+# #submit_button가 송신 되면 함수를 실행
+# if submit_button:
+#   update_page()
 
 # ====================
 
-# import streamlit as st
+import streamlit as st
 # import pandas as pd
-# import requests
-# import snowflake.connector
+import requests
+import snowflake.connector
 # from urllib.error import URLError
 
-# st.title('P.Bees')
+st.title('P.Bees')
 
-# st.header('고객용 회원가입')
-# st.text('🥣 Omega 3 & Blueberry Oatmeal')
+st.header('회원가입')
+st.text('🥣 정보를 입력해주세요')
 # st.text('🥗 Kale, Spinach & Rocket Smoothie')
 # st.text('🐔 Hard-Boiled Free-Range Egg')
 # st.text('🥑🍞 Avocado Toast')
@@ -69,10 +69,10 @@ if submit_button:
 # st.dataframe(fruits_to_show)
 
 # # create the repeatable code block (called a function)
-# def get_fruityvice_data(this_fruit_choice):
-#   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
-#   fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
-#   return fruityvice_normalized
+def get_fruityvice_data(this_fruit_choice):
+  fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + this_fruit_choice)
+  fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
+  return fruityvice_normalized
 
 # # New Section to display fruityvice api response
 # st.header('Fruityvice Fruit Advice!')
