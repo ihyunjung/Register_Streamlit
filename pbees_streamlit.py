@@ -13,13 +13,18 @@ st.markdown("<p style='text-align: center; color: white;'>정보를 입력해주
 # st.text("Customer list contains:")
 # st.text(my_data_row)
 
-def insert_row_snowflake(new_fruit):
-  with my_cnx.cursor() as my_cur:
-    my_cur.execute("insert into customer values('"+new_fruit+"')")
-    return "Thanks for adding " + new_fruit
+# def insert_row_snowflake(new_fruit):
+#   with my_cnx.cursor() as my_cur:
+#     my_cur.execute("insert into customer (ID, NAME, PHONE, EMAIL, COMPANY, IS_AGREEMENT, IS_ACTIVE, STORE_ID, CUSTOMER_NUMBER, CREATED_AT) values('"
+#                    +name, phone, email, company+"')")
+#     return "Thanks for adding " + new_fruit
 
 
-add_my_name = st.text_input('이름을 입력해주세요')
+add_my_name = st.text_input('이름')
+add_my_phone = st.text_input('핸드폰 번호')
+add_my_email = st.text_input('이메일')
+add_my_company = st.text_input('소속')
+
 if st.button('회원가입'):
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_name)
