@@ -17,9 +17,10 @@ add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)')
 add_my_email = st.text_input('이메일')
 add_my_company = st.text_input('소속')
 
-st.balloons()
+
 
 if st.button('응모완료'):
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
   st.text(back_from_function)
+  st.balloons()
