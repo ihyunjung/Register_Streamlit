@@ -2,7 +2,7 @@ import streamlit as st
 import snowflake.connector
 
 st.markdown("<h1 style='text-align: center; color: black;'>송이송이 눈꽃송이</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: black;'>Snowflake 기능 체험하기</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: black;'>❄️Snowflake 기능 체험하기❄️</p>", unsafe_allow_html=True)
 
 
 def insert_row_snowflake(name, phone, email, company):
