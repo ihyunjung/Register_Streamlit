@@ -9,25 +9,25 @@ def update_page():
   st.json(customer_information)
 #혹시 선택 박스에서선택한 페이지가INPUT FORM이라면
 # if page == ‘INPUT FORM’:
-  st.title(‘INPUT FORMATION’)
+  st.title('INPUT FORMATION')
 #각종 입력 폼
-with st.form(key=’customer’):
-  customer_name: str = st.text_input(‘NAME’, max_chars=15)
-  customer_mobile: str = st.text_input(‘MOBILE’, max_chars=13)
+with st.form(key='customer'):
+  customer_name: str = st.text_input('NAME', max_chars=15)
+  customer_mobile: str = st.text_input('MOBILE', max_chars=13)
   # customer_gender = st.radio(“GENDER”,(‘MEN’, ‘Women’))
   # customer_address = st.selectbox(‘COUNTRY’,
   # (‘Hokkaido’, ‘Tohoku’, ‘Kanto’, ‘Chubu’, ‘Kinki’, ‘Kansai’, ‘Chugoku’, ‘Shikoku’, ‘Kyusyu’, ‘Okinawa’))
-  customer_company: str = st.text_input(‘Company’, max_chars = 20)
-  customer_mail: str = st.text_input(‘Mail Address’, max_chars = 30)
+  customer_company: str = st.text_input('Company', max_chars = 20)
+  customer_mail: str = st.text_input('Mail Address', max_chars = 30)
   #폼에 입력 결과를 정리
   customer_information = {
-  ‘customer_name’: customer_name,
-  ‘customer_mobile’ : customer_mobile,
-  ‘customer_company’: customer_company,
-  ‘customer_mail’: customer_mail
+  'customer_name': customer_name,
+  'customer_mobile' : customer_mobile,
+  'customer_company': customer_company,
+  'customer_mail': customer_mail
   }
 #폼에 입력 결과를 송신
-submit_button = st.form_submit_button(label=’Send’)
+submit_button = st.form_submit_button(label='Send')
 #submit_button가 송신 되면 함수를 실행
 if submit_button:
   update_page()
