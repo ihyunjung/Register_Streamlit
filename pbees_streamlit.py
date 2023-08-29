@@ -6,7 +6,9 @@ st.markdown("<p style='text-align: center; color: white;'>정보를 입력해주
 
 my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
-my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+my_cur.execute("select * from customer")
+# my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 my_data_row = my_cur.fetchone()
-st.text("Hello from Snowflake:")
+# st.text("Hello from Snowflake:")
+st.text("Customer list contains:")
 st.text(my_data_row)
