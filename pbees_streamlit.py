@@ -13,10 +13,10 @@ st.markdown("<p style='text-align: center; color: black;'>정보를 입력해주
 # st.text("Customer list contains:")
 # st.text(my_data_row)
 
-def insert_row_snowflake(new_fruit):
+def insert_row_snowflake(name, phone, email, company):
   with my_cnx.cursor() as my_cur:
     my_cur.execute("insert into customer (NAME, PHONE, EMAIL, COMPANY) values('"+name, phone, email, company+"')")
-    return "Thanks for adding " + new_fruit
+    return "Thanks for adding"
 
 
 add_my_name = st.text_input('이름')
