@@ -15,7 +15,8 @@ st.markdown("<p style='text-align: center; color: black;'>정보를 입력해주
 
 def insert_row_snowflake(name, phone, email, company):
   with my_cnx.cursor() as my_cur:
-    my_cur.execute("insert into customer (NAME, PHONE, EMAIL, COMPANY) values('"+'{name}', '{phone}', '{email}', '{company}'"')")
+    query = "insert into customer (NAME, PHONE, EMAIL, COMPANY) values('{name}', '{phone}', '{email}', '{company}');".format(name = name, phone = phone, email = email, company = company)
+    my_cur.execute(query)
     return "Thanks for adding"
 
 
