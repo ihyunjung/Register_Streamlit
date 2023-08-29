@@ -5,7 +5,7 @@ import streamlit as st
 #정보 입력 후 함수
 def update_page():
   st.balloons()
-  st.markdown(‘# Thank you for information’)
+  st.markdown('# Thank you for information')
   st.json(customer_information)
 #혹시 선택 박스에서선택한 페이지가INPUT FORM이라면
 # if page == ‘INPUT FORM’:
