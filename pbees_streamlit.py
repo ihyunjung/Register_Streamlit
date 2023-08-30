@@ -24,16 +24,16 @@ col1, col2, col3, col4, col5 = st.columns(5)
 if col3.button('체험해 보세요'):
    if not add_my_name:
     st.error('이름을 입력해주세요')
-  elif not add_my_phone:
+   elif not add_my_phone:
     st.error('핸드폰번호를 입력해주세요')
-  else:
-    my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
-    back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
-    st.text(back_from_function)
-    st.session_state.disabled = False
-    st.snow()
-    st.markdown("<h1 style='text-align: center;'>Thank you for Adding!</h1>", unsafe_allow_html=True)
-    # st.session_state.disabled = True
+   else:
+      my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
+      back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
+      st.text(back_from_function)
+      st.session_state.disabled = False
+      st.snow()
+      st.markdown("<h1 style='text-align: center;'>Thank you for Adding!</h1>", unsafe_allow_html=True)
+      # st.session_state.disabled = True
 
 
 btn = st.button("Press Me")
