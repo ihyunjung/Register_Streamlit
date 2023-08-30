@@ -17,6 +17,11 @@ add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', pla
 add_my_email = st.text_input('이메일', placeholder='이메일을 입력해주세요')
 add_my_company = st.text_input('소속', placeholder='소속을 입력해주세요')
 
+# The text input box is not empty then only you proceed 
+if not add_my_name:
+  st.error("이름을 입력해주세요")
+  
+
 # if len(add_my_name) < 1:
 #   st.error("이름을 입력해주세요")
   
