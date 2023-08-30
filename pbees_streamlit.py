@@ -13,16 +13,17 @@ def insert_row_snowflake(name, phone, email, company):
 
 
 add_my_name = st.text_input('이름', placeholder='이름을 입력해주세요')
-add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', placeholder='핸드폰 번호를 입력해주세요', max_chars=11)
+# add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', placeholder='핸드폰 번호를 입력해주세요', max_chars=11)
 add_my_email = st.text_input('이메일', placeholder='이메일을 입력해주세요')
 add_my_company = st.text_input('소속', placeholder='소속을 입력해주세요')
 
 # The text input box is not empty then only you proceed 
 if not add_my_name:
   st.error("이름을 입력해주세요")
-
-if not add_my_email:
-  st.error("이메일을 입력해주세요")
+else: 
+  add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', placeholder='핸드폰 번호를 입력해주세요', max_chars=11)
+# if not add_my_email:
+  # st.error("이메일을 입력해주세요")
 
 # if len(add_my_name) < 1:
 #   st.error("이름을 입력해주세요")
