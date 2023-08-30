@@ -35,21 +35,21 @@ if col3.button('체험해 보세요'):
     st.snow()
     # st.session_state.disabled = True
 
-if 'openmodel' not in st.session_state:
-  st.session_state.openmodel = False
+# if 'openmodel' not in st.session_state:
+#   st.session_state.openmodel = False
 
-modal = Modal("Demo Modal", "TryModal")
-gr = st.columns(20)
-with gr[19]:
-  open_modal = st.button("Open", "rt")
-  if open_modal:
-    st.session_state.openmodel = True
-if st.session_state.openmodel:
-  modal.open()
-if modal.is_open():
-  with modal.container():
-    st.write("Text goes here")
-    st.write("Some fancy text")
+# modal = Modal("Demo Modal", "TryModal")
+# gr = st.columns(20)
+# with gr[19]:
+#   open_modal = st.button("Open", "rt")
+#   if open_modal:
+#     st.session_state.openmodel = True
+# if st.session_state.openmodel:
+#   modal.open()
+# if modal.is_open():
+#   with modal.container():
+#     st.write("Text goes here")
+#     st.write("Some fancy text")
 
 
 
