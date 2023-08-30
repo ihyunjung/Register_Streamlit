@@ -26,10 +26,6 @@ if col3.button('응모완료'):
     st.error('이름을 입력해주세요')
   elif not add_my_phone:
     st.error('핸드폰번호를 입력해주세요')
-  elif not add_my_email:
-    st.error('이메일을 입력해주세요')
-  elif not add_my_company:
-    st.error('소속을 입력해주세요')
   else:
     my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
     back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
