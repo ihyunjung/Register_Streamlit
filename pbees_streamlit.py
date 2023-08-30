@@ -21,7 +21,7 @@ add_my_company = st.text_input('소속')
 
 
 col1, col2, col3, col4, col5 = st.columns(5)
-if col3.form_submit_button('체험해 보세요', disabled=True):
+if col3.button('체험해 보세요', disabled=True):
    if not add_my_name:
     st.error('이름을 입력해주세요')
    elif not add_my_phone:
