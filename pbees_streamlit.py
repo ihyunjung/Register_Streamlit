@@ -17,29 +17,24 @@ add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)')
 add_my_email = st.text_input('이메일')
 add_my_company = st.text_input('소속')
 
-# The text input box is not empty then only you proceed 
-if not add_my_name:
-  st.error('이름을 입력해주세요')
-# else: 
-#   add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', placeholder='핸드폰 번호를 입력해주세요')
-#   if not add_my_phone:
-#     st.error("이름을 입력해주세요")
-#   else: 
-#     add_my_email = st.text_input('이메일', placeholder='이메일을 입력해주세요')
-# if not add_my_email:
-  # st.error("이메일을 입력해주세요")
 
-# if len(add_my_name) < 1:
-#   st.error("이름을 입력해주세요")
-  
 
 
 col1, col2, col3, col4, col5 = st.columns(5)
 if col3.button('응모완료'):
-  my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
-  back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
-  st.text(back_from_function)
-  st.snow()
+  if not add_my_name:
+    st.error('이름을 입력해주세요')
+  elif not add_my_phone:
+    st.error('핸드폰번호를 입력해주세요')
+  elif not add_my_email:
+    st.error('이메일을 입력해주세요')
+  elif not add_my_company:
+    st.error('소속을 입력해주세요')
+  else:
+    my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
+    back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
+    st.text(back_from_function)
+    st.snow()
 
 
   
