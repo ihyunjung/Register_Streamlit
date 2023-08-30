@@ -23,4 +23,5 @@ if st.button('응모완료'):
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
   st.text(back_from_function)
-  st.balloons()
+  st.snow()
+  # st.balloons()
