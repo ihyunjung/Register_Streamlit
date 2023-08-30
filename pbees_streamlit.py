@@ -11,7 +11,7 @@ def insert_row_snowflake(name, phone, email, company):
   with my_cnx.cursor() as my_cur:
     query = "insert into customer (NAME, PHONE, EMAIL, COMPANY) values('{name}', '{phone}', '{email}', '{company}');".format(name = name, phone = phone, email = email, company = company)
     my_cur.execute(query)
-    return None
+    return 
 
 
 add_my_name = st.text_input('이름')
@@ -33,7 +33,6 @@ if col3.button('체험해 보세요'):
     back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
     st.text(back_from_function)
     st.snow()
-    st.write("Thank you for Adding!")
     st.markdown("<h1 style='text-align: center;'>Thank you for Adding!</h1>", unsafe_allow_html=True)
     # st.session_state.disabled = True
 
