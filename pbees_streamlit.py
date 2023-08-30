@@ -51,6 +51,11 @@ if col3.button('체험해 보세요'):
 #     st.write("Text goes here")
 #     st.write("Some fancy text")
 
+import time 
+
+with st.spinner('Wait for it...'):
+  time.sleep(2)
+  st.success('Done!') 
 
 
   
