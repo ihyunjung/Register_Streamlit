@@ -1,7 +1,7 @@
 import streamlit as st
 import snowflake.connector
 
-st.markdown("<h1 style='text-align: center; color: black;'>❄️송이송이 눈꽃송이❄️</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: black;'>송이송이 눈꽃송이</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center; color: black;'>Snowflake 기능 체험하기</p>", unsafe_allow_html=True)
 
 
@@ -18,8 +18,8 @@ add_my_email = st.text_input('이메일')
 add_my_company = st.text_input('소속')
 
 
-
-if st.button('응모완료'):
+col1, col2, col3 = st.beta_columns(3)
+if col2.button('응모완료'):
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
   st.text(back_from_function)
