@@ -30,35 +30,9 @@ if col3.button('체험해 보세요'):
       my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
       back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
       st.text(back_from_function)
-      st.session_state.disabled = False
+      st.lock()
       st.snow()
       st.markdown("<h1 style='text-align: center;'>Thank you for Adding!</h1>", unsafe_allow_html=True)
       # st.session_state.disabled = True
 
 
-btn = st.button("Press Me")
-
-if btn:
-    if 'x' in st.session_state.keys():
-        st.session_state['x']=st.session_state['x']+1
-    else:
-        st.session_state['x']=1
-
-if 'x' in st.session_state.keys():
-    st.write(st.session_state['x'])
-
-# if 'openmodel' not in st.session_state:
-#   st.session_state.openmodel = False
-
-# modal = Modal("Demo Modal", "TryModal")
-# gr = st.columns(20)
-# with gr[19]:
-#   open_modal = st.button("Open", "rt")
-#   if open_modal:
-#     st.session_state.openmodel = True
-# if st.session_state.openmodel:
-#   modal.open()
-# if modal.is_open():
-#   with modal.container():
-#     st.write("Text goes here")
-#     st.write("Some fancy text")
