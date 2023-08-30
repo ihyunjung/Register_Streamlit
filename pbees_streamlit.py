@@ -17,6 +17,9 @@ add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', max
 add_my_email = st.text_input('이메일')
 add_my_company = st.text_input('소속')
 
+if len(add_my_name) < 1:
+  st.error("이름을 입력해주세요")#빨강
+
 
 col1, col2, col3, col4, col5 = st.columns(5)
 if col3.button('응모완료'):
