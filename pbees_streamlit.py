@@ -13,7 +13,7 @@ def insert_row_snowflake(name, phone, email, company):
 
 
 add_my_name = st.text_input('이름')
-add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', max_char=11)
+add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', max_chars=11)
 add_my_email = st.text_input('이메일')
 add_my_company = st.text_input('소속')
 
@@ -25,10 +25,5 @@ if st.button('응모완료'):
   st.text(back_from_function)
   st.snow()
 
-# col1, col2, col3 = st.beta_columns(3)
-# if col2.button('응모완료'):
-#   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
-#   back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
-#   st.text(back_from_function)
-#   st.snow()
+
   
