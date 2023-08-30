@@ -11,7 +11,7 @@ def insert_row_snowflake(name, phone, email, company):
   with my_cnx.cursor() as my_cur:
     query = "insert into customer (NAME, PHONE, EMAIL, COMPANY) values('{name}', '{phone}', '{email}', '{company}');".format(name = name, phone = phone, email = email, company = company)
     my_cur.execute(query)
-    return "Thanks for adding"
+    return 0
 
 
 add_my_name = st.text_input('이름')
@@ -33,6 +33,7 @@ if col3.button('체험해 보세요'):
     back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
     st.text(back_from_function)
     st.snow()
+    st.write("Thank you for Adding!")
     # st.session_state.disabled = True
 
 # if 'openmodel' not in st.session_state:
@@ -50,44 +51,3 @@ if col3.button('체험해 보세요'):
 #   with modal.container():
 #     st.write("Text goes here")
 #     st.write("Some fancy text")
-
-import * as React from "react";
-import {
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  ModalButton,
-  SIZE,
-  ROLE
-} from "baseui/modal";
-import { KIND as ButtonKind } from "baseui/button";
-
-export default () => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  return (
-    <Modal
-      onClose={() => setIsOpen(false)}
-      closeable
-      isOpen={isOpen}
-      animate
-      autoFocus
-      size={SIZE.default}
-      role={ROLE.dialog}
-    >
-      <ModalHeader>Hello world</ModalHeader>
-      <ModalBody>
-        Proin ut dui sed metus pharetra hend rerit vel non
-        mi. Nulla ornare faucibus ex, non facilisis nisl.
-        Maecenas aliquet mauris ut tempus.
-      </ModalBody>
-      <ModalFooter>
-        <ModalButton kind={ButtonKind.tertiary}>
-          Cancel
-        </ModalButton>
-        <ModalButton>Okay</ModalButton>
-      </ModalFooter>
-    </Modal>
-  );
-}
-  
