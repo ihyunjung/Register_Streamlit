@@ -51,11 +51,43 @@ if col3.button('체험해 보세요'):
 #     st.write("Text goes here")
 #     st.write("Some fancy text")
 
-import time 
+import * as React from "react";
+import {
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalButton,
+  SIZE,
+  ROLE
+} from "baseui/modal";
+import { KIND as ButtonKind } from "baseui/button";
 
-with st.spinner('Wait for it...'):
-  time.sleep(2)
-  st.success('Done!') 
-
-
+export default () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <Modal
+      onClose={() => setIsOpen(false)}
+      closeable
+      isOpen={isOpen}
+      animate
+      autoFocus
+      size={SIZE.default}
+      role={ROLE.dialog}
+    >
+      <ModalHeader>Hello world</ModalHeader>
+      <ModalBody>
+        Proin ut dui sed metus pharetra hend rerit vel non
+        mi. Nulla ornare faucibus ex, non facilisis nisl.
+        Maecenas aliquet mauris ut tempus.
+      </ModalBody>
+      <ModalFooter>
+        <ModalButton kind={ButtonKind.tertiary}>
+          Cancel
+        </ModalButton>
+        <ModalButton>Okay</ModalButton>
+      </ModalFooter>
+    </Modal>
+  );
+}
   
