@@ -18,7 +18,7 @@ add_my_email = st.text_input('이메일')
 add_my_company = st.text_input('소속')
 
 
-col1, col2, col3, col4, col5 = st.columns(3)
+col1, col2, col3, col4, col5 = st.columns(5)
 if col3.button('응모완료'):
   my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
