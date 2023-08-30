@@ -1,6 +1,6 @@
 import streamlit as st
 import snowflake.connector
-from streamlit_modal import Modal
+# from streamlit_modal import Modal
 
 
 st.markdown("<h1 style='text-align: center;'>송이송이 눈꽃송이</h1>", unsafe_allow_html=True)
