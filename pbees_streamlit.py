@@ -20,19 +20,9 @@ add_my_email = st.text_input('이메일')
 add_my_company = st.text_input('소속')
 
 
-import SessionState
-
-ss = SessionState.get(x=1)
-    
-# if st.button("Increment x"):
-#     ss.x = ss.x + 1
-#     st.text(ss.x)
-
 col1, col2, col3, col4, col5 = st.columns(5)
 if col3.button('체험해 보세요'):
-  ss.x = ss.x + 1
-  st.text(ss.x)
-  if not add_my_name:
+   if not add_my_name:
     st.error('이름을 입력해주세요')
   elif not add_my_phone:
     st.error('핸드폰번호를 입력해주세요')
@@ -44,7 +34,18 @@ if col3.button('체험해 보세요'):
     st.snow()
     st.markdown("<h1 style='text-align: center;'>Thank you for Adding!</h1>", unsafe_allow_html=True)
     # st.session_state.disabled = True
-    
+
+
+btn = st.button("Press Me")
+
+if btn:
+    if 'x' in st.session_state.keys():
+        st.session_state['x']=st.session_state['x']+1
+    else:
+        st.session_state['x']=1
+
+if 'x' in st.session_state.keys():
+    st.write(st.session_state['x'])
 
 # if 'openmodel' not in st.session_state:
 #   st.session_state.openmodel = False
