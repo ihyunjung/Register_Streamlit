@@ -11,6 +11,7 @@ def insert_row_snowflake(name, phone, email, company):
   with my_cnx.cursor() as my_cur:
     query = "insert into customer (NAME, PHONE, EMAIL, COMPANY) values('{name}', '{phone}', '{email}', '{company}');".format(name = name, phone = phone, email = email, company = company)
     my_cur.execute(query)
+    return " "
 
 
 add_my_name = st.text_input('이름')
