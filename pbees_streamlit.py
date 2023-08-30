@@ -30,7 +30,6 @@ if col3.form_submit_button('체험해 보세요', disabled=True):
       my_cnx = snowflake.connector.connect(**st.secrets["snowflake"])
       back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
       st.text(back_from_function)
-      st.lock()
       st.snow()
       st.markdown("<h1 style='text-align: center;'>Thank you for Adding!</h1>", unsafe_allow_html=True)
       # st.session_state.disabled = True
