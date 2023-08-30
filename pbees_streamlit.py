@@ -19,7 +19,7 @@ add_my_company = st.text_input('소속', placeholder='소속을 입력해주세�
 
 # The text input box is not empty then only you proceed 
 if not add_my_name:
-  st.text_input('':red[text to be colored],placeholder='이름을 입력해주세요')
+  st.text_input(':red[text to be colored]',placeholder='이름을 입력해주세요')
 else: 
   add_my_phone = st.text_input('핸드폰 번호 ( - 는 제외해주세요)', placeholder='핸드폰 번호를 입력해주세요')
   if not add_my_phone:
