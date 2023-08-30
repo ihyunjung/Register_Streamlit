@@ -31,7 +31,7 @@ if col3.button('체험해 보세요'):
     back_from_function = insert_row_snowflake(add_my_name, add_my_phone, add_my_email, add_my_company)
     st.text(back_from_function)
     st.snow()
-    del col3.button()
+  del col3.button()
 
 
   
